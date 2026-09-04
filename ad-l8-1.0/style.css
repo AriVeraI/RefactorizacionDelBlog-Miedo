@@ -1,26 +1,41 @@
-:root{
+:root {
   --vino: #4A0B22;
 }
 
-/* Ekemplo de como usar las variales
-  background-color: var(--tea-green); 
-*/
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #F7F7F7;
+}
 
+.color-titulo {
+  color: var(--vino);
+}
 
-html {
-    height: 100%;
-    width: 100%;
-  }
-  
-  .color-titulo{
-    color: var(--vino);
-
-  }
+/* Clase global para justificar los párrafos de texto perfectamente */
+.text-justify {
+  text-align: justify;
+  text-justify: inter-word;
+}
 
 body {
-    background-color: #F7F7F7;
-  }
-body {
-  body {
-    font-family: 'Poppins', sans-serif;
+  background-color: #F7F7F7 !important;
+}
+.titulo-principal {
+  color: #4A0B22 !important;
+}
+.btn-personalizado {
+  background-color: #7F055F !important;
+  color: #FFFFFF !important;
+  border: none;
+}
+.btn-personalizado:hover {
+  background-color: #4A0B22 !important;
+  color: #FFFFFF !important;
+}
+.form-control {
+  border: 2px solid #ced4da !important;
+  border-radius: 4px;
 }

@@ -1,37 +1,69 @@
-// =========================================================
-//Modificado para cumplir con la Tarea 6 del Blog de Terror
-// 1. Seleccionamos los elementos HTML usando tus IDs exactos
+
 const alertPlaceholder = document.getElementById("contactoAlertPlaceholder");
 const contactForm = document.getElementById("formularioContacto");
 
-/**
- * 2. Función que genera la alerta dinámicamente
- * El atributo data-bs-dismiss="alert" permite que la 'x' la cierre de forma nativa
- */
 const appendAlert = (message, type) => {
   const wrapper = document.createElement("div");
   wrapper.innerHTML = [
-    `<div class="alert alert-${type} alert-dismissible fade show mt-3" role="alert">`,
+    `<div class="alert alert-${type} alert-dismissible fade show mt-3 shadow-sm" role="alert">`,
     `   <div>${message}</div>`,
     '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
     "</div>",
   ].join("");
 
+  // Limpia alertas previas para que solo aparezca una activa
+  alertPlaceholder.innerHTML = "";
   alertPlaceholder.append(wrapper);
 };
 
-// 3. Escuchamos el envío de tu formulario
 if (contactForm) {
   contactForm.addEventListener("submit", (event) => {
-    // Evita que la página se recargue por completo
     event.preventDefault();
 
-    // Lanza la alerta con el texto exacto requerido por tu tarea
-    // Puedes cambiar 'success' (verde) por 'danger' (rojo) si prefieres la estética de terror
-    appendAlert("Mensaje enviado", "success");
+    // Lanza la alerta con el texto requerido por la tarea
+    appendAlert("¡Mensaje enviado con éxito!", "success");
 
-    // Limpia las casillas para que quede listo para otro relato
+    // Limpia las casillas del formulario
     contactForm.reset();
   });
 }
-// =========================================================
+
+// Contacto
+document.addEventListener("DOMContentLoaded", function() {
+    fetch("4_Navbar.html")
+        .then(response => response.text())
+        .then(html => { document.getElementById("espacio-navbar").innerHTML = html; })
+        .catch(error => console.error("Error al cargar el navbar:", error));
+
+    fetch("5_Footer.html")
+        .then(response => response.text())
+        .then(html => { document.getElementById("contenedor-footer").innerHTML = html; })
+        .catch(error => console.error("Error al cargar el footer:", error));
+});
+ 
+// About
+document.addEventListener("DOMContentLoaded", function() {
+    fetch("4_Navbar.html")
+        .then(response => response.text())
+        .then(html => { document.getElementById("espacio-navbar").innerHTML = html; })
+        .catch(error => console.error("Error al cargar el navbar:", error));
+
+    fetch("5_Footer.html")
+        .then(response => response.text())
+        .then(html => { document.getElementById("contenedor-footer").innerHTML = html; })
+        .catch(error => console.error("Error al cargar el footer:", error));
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Cargar Navbar
+    fetch("4_Navbar.html")
+        .then(response => response.text())
+        .then(html => { document.getElementById("espacio-navbar").innerHTML = html; })
+        .catch(error => console.error("Error al cargar el navbar:", error));
+
+    // Cargar Footer
+    fetch("5_Footer.html")
+        .then(response => response.text())
+        .then(html => { document.getElementById("contenedor-footer").innerHTML = html; })
+        .catch(error => console.error("Error al cargar el footer:", error));
+});
